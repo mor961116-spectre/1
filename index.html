@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角色Wiki - 人物百科</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 歡迎彈出視窗 -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWelcomeModal()">&times;</span>
+            <div class="modal-header">
+                <h1>✨ 歡迎來到角色Wiki ✨</h1>
+            </div>
+            <div class="modal-body">
+                <p>探索豐富的角色設定與背景故事</p>
+                <p>點擊下方按鈕開始您的冒險！</p>
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" onclick="exploreCharacters()">開始探索</button>
+                    <button class="btn btn-secondary" onclick="closeWelcomeModal()">稍後再看</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 導航欄 -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1 class="logo">📖 角色Wiki</h1>
+                <div class="nav-buttons">
+                    <button class="nav-btn" onclick="showAllCharacters()">全部角色</button>
+                    <button class="nav-btn" onclick="openWelcomeModal()">關於本站</button>
+                    <input type="text" id="searchInput" class="search-box" placeholder="搜尋角色..." onkeyup="searchCharacters()">
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主內容區域 -->
+        <main class="main-content">
+            <!-- 角色列表 -->
+            <section class="characters-section">
+                <h2>角色列表</h2>
+                <div id="charactersList" class="characters-grid">
+                    <!-- 動態生成的角色卡片會在這裡 -->
+                </div>
+            </section>
+
+            <!-- 角色詳情面板 -->
+            <section id="detailPanel" class="detail-panel hidden">
+                <button class="back-btn" onclick="closeDetailPanel()">← 返回</button>
+                <div id="characterDetail" class="character-detail">
+                    <!-- 動態生成的詳細資訊會在這裡 -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
